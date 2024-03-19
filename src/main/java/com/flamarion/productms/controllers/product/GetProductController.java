@@ -24,15 +24,8 @@ public class GetProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> handle(@PathVariable(name = "id") String productId) {
-      try {
         var product = this.getProductService.execute(productId);
 
         return ResponseEntity.ok().body(product);
-      } catch (Exception exception) {
-          var parsedException = HttpException.parse(exception);
-          var errorResponse = ErrorResponse.builder().message(parsedException.getMessage()).build();
-
-          return ResponseEntity.status(parsedException.getStatus()).body(errorResponse);
-      }
     }
 }
