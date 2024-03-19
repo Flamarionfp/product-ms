@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionHandlerMiddleware {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handle(Exception exception) {
-        HttpException httpException = HttpException.parse(exception);
-        ErrorResponse errorResponse = ErrorResponse.builder().message(httpException.getMessage()).build();
+        HttpException parsedException = HttpException.parse(exception);
+        ErrorResponse errorResponse = ErrorResponse.builder().message(parsedException.getMessage()).build();
 
-        return ResponseEntity.status(httpException.getStatus()).body(errorResponse);
+        return ResponseEntity.status(parsedException.getStatus()).body(errorResponse);
     }
 }
