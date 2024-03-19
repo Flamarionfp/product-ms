@@ -1,8 +1,8 @@
 package com.flamarion.productms.controllers.product;
 
-import com.flamarion.productms.dtos.CreateProductDTO;
+import com.flamarion.productms.dtos.product.CreateProductDTO;
 import com.flamarion.productms.entities.Product;
-import com.flamarion.productms.services.CreateProductService;
+import com.flamarion.productms.services.product.CreateProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

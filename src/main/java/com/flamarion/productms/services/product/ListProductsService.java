@@ -1,4 +1,4 @@
-package com.flamarion.productms.services;
+package com.flamarion.productms.services.product;
 
 import com.flamarion.productms.entities.Product;
 import com.flamarion.productms.repositories.ProductRepository;

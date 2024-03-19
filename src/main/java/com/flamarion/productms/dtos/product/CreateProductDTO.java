@@ -1,4 +1,4 @@
-package com.flamarion.productms.dtos;
+package com.flamarion.productms.dtos.product;
 
 import java.util.List;
 

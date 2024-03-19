@@ -1,6 +1,6 @@
-package com.flamarion.productms.services;
+package com.flamarion.productms.services.product;
 
-import com.flamarion.productms.dtos.CreateProductDTO;
+import com.flamarion.productms.dtos.product.CreateProductDTO;
 import com.flamarion.productms.entities.Product;
 import com.flamarion.productms.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

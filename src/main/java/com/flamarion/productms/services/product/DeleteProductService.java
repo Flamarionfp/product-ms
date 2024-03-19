@@ -1,4 +1,4 @@
-package com.flamarion.productms.services;
+package com.flamarion.productms.services.product;
 
 import com.flamarion.productms.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

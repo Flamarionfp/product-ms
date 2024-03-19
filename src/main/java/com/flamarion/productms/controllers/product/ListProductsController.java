@@ -1,7 +1,7 @@
 package com.flamarion.productms.controllers.product;
 
 import com.flamarion.productms.entities.Product;
-import com.flamarion.productms.services.ListProductsService;
+import com.flamarion.productms.services.product.ListProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
