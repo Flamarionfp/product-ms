@@ -1,5 +1,7 @@
 package com.flamarion.productms.controllers.product;
 
+import com.flamarion.productms.core.http.exceptions.HttpException;
+import com.flamarion.productms.models.response.ErrorResponse;
 import com.flamarion.productms.services.product.DeleteProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +22,15 @@ public class DeleteProductController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> handle(@PathVariable(name = "id") String productId) {
-        this.deleteProductService.execute(productId);
+        try {
+            this.deleteProductService.execute(productId);
 
-        return ResponseEntity.noContent().build();
+            return ResponseEntity.noContent().build();
+        } catch (Exception exception) {
+            var parsedException = HttpException.parse(exception);
+            var errorResponse = ErrorResponse.builder().message(parsedException.getMessage()).build();
+
+            return ResponseEntity.status(parsedException.getStatus()).body(errorResponse);
+        }
     }
 }
