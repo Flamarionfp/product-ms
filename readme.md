@@ -7,3 +7,5 @@
 Opção escolhida:
 
 **A. Implementação de um microserviço**: Crie um simples microserviço usando Spring Boot que expõe uma API REST para realizar operações CRUD em uma entidade Produto.
+
+OBS: A opção **B (Dockerizando" um microserviço)** também foi realizada, pois foi utilizado docker para rodar a aplicação, bem como o banco de dados.
