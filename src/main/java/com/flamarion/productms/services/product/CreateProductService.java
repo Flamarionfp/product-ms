@@ -4,6 +4,7 @@ import com.flamarion.productms.core.http.exceptions.HttpException;
 import com.flamarion.productms.dtos.product.CreateProductDTO;
 import com.flamarion.productms.entities.Product;
 import com.flamarion.productms.repositories.ProductRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class CreateProductService {
     public CreateProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
+    @Transactional
     public Product execute(CreateProductDTO data) {
         var previousProduct = this.productRepository.findByName(data.name());
 
