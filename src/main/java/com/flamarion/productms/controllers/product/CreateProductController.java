@@ -3,6 +3,7 @@ package com.flamarion.productms.controllers.product;
 import com.flamarion.productms.dtos.product.CreateProductDTO;
 import com.flamarion.productms.entities.Product;
 import com.flamarion.productms.services.product.CreateProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class CreateProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> handle(@RequestBody CreateProductDTO body) {
+    public ResponseEntity<Product> handle(@RequestBody @Valid CreateProductDTO body) {
         var createdProduct = createProductService.execute(body);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(createdProduct);
